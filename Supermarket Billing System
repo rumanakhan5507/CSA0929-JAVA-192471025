@@ -8,9 +8,9 @@ int tomato_quantity= 5;
 int rice_quantity= 2;
 int onion_quantity= 5; 
 
-int tomato_cost= tomato_price * tomato_quantity
-float rice_cost= rice_price * rice_quantity
-int onion_cost= onion_price * onion_quantity
+int tomato_cost= tomato_price * tomato_quantity;
+float rice_cost= rice_price * rice_quantity;
+int onion_cost= onion_price * onion_quantity;
 
 float grand_total= tomato_cost + rice_cost + onion_cost;
 
@@ -20,9 +20,11 @@ System.out.println ("Cost of onion=" +onion_cost);
 System.out.println ("Grand total of all items=" +grand_total);
 if (grand_total>=300) 
 {
-float dis = 0.2f;
-float discount = grand_total - discount; 
-System.out.println(Math.round(final_discount));
+float dis= 0.2f;
+float discount = grand_total * dis;
+System.out.println(discount);
+float final_amount = grand_total - discount;
+System.out.println(Math.round(final_amount));
 }
 else
 {
@@ -30,4 +32,10 @@ System.out.println("No Discount");
 }
 }
 } 
-
+OUTPUT:
+Cost of tomato=180
+Cost of rice=91.0
+Cost of onion=100
+Grand total of all items=371.0
+74.200005
+297
