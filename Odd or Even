@@ -8,4 +8,5 @@ public class Main {
         }
     }
 }
-
+OUTPUT:
+8 is Even.
