@@ -1,0 +1,26 @@
+import java.io.*;
+public class GCDANDLCM
+{
+    public static void main(String[] args)
+    {
+        int a = 36, b= 60;
+        int gcd= findGCD (a,b);
+        int lcm= (a*b)/gcd;
+        System.out.println("GCD is:"+gcd);
+        System.out.println("LCM is:"+lcm);
+    }
+    public static int findGCD(int a, int b)
+    {
+        while (a!=b)
+        {
+            if (a>b)
+            a= a-b;
+            else
+            b= b-a;
+        }
+        return a;
+    }
+}
+OUTPUT: 
+GCD is:12
+LCM is:180
