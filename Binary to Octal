@@ -1,0 +1,28 @@
+import java.io.*;
+public class BinaryToOctal 
+{
+    public static void main(String[] args) 
+    {
+        String binary = "110101";  
+        while (binary.length() % 3 != 0) 
+        {
+            binary = "0" + binary;
+        }
+        String octal = "";
+        for (int i = 0; i < binary.length(); i += 3) 
+        {
+            int value = 0;
+            if (binary.charAt(i) == '1') value += 4;
+            if (binary.charAt(i + 1) == '1') value += 2;
+            if (binary.charAt(i + 2) == '1') value += 1;
+            octal += value;
+        }
+        while (octal.length() > 1 && octal.charAt(0) == '0') 
+        {
+            octal = octal.substring(1);
+        }
+        System.out.println("Octal: " + octal);
+    }
+}
+OUTPUT: 
+Octal: 65
