@@ -1,0 +1,19 @@
+import java.io.*;
+public class CheckUsername
+{
+    public static void main(String[] args)
+    {
+        String s1= "Saveetha@789";
+        String s2= "Saveetha@123";
+        if (s1.equals(s2))
+        {
+            System.out.println("User name valid");
+        }
+        else
+        {
+            System.out.println("User name invalid");
+        }
+    }
+}
+OUTPUT:
+User name invalid
