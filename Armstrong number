@@ -1,40 +1,31 @@
 import java.io.*;
-public class Armstrongnumber
+public class Amstrongnumber
 {
     public static void main(String[] args)
     {
-        int num = 153;
-        int originalnum= num;
-        int sum = 0;
-        int digits = 0;
-        int temp = num;
-        while (temp!=0);
+        int n= 153;
+        int num= n;
+        int arm= 0;
+        while (num!=0)
         {
-            digits++;
-            temp/=10;
+            int rem= num % 10;
+            arm += rem*rem*rem;
+            num /= 10;
         }
-        temp = num;
-        while (temp!=0)
+        if (n==arm)
         {
-            int digit = temp%10;
-            int power=1;
-            for(int i=1; i<=digits; i++)
-            {
-                power*=digit;
-            }
-            sum +=power;
-            temp/=10;
-        }
-        if (sum==originalnum)
-        {
-            System.out.println(originalnum+"is an Armstrong number");
+            System.out.println(n+ "is an Armstrong number");
         }
         else
         {
-            System.out.println(originalnum+"is NOT an Armstrong number");
+            System.out.println(n+ "is not an Armstrong number");
         }
+            
         }
-            }
+    }
+OUTPUT: 
+153is an Armstrong number
+
     
 
     
