@@ -1,0 +1,45 @@
+19. Write a Program to Remove the Duplicate Items from a array. 
+Sample Input: 
+Enter the number of elements in array:7 
+Enter element1:10 
+Enter element2:20 
+Enter element3:20 
+Enter element4:30 
+Enter element5:40 
+Enter element6:40 
+Enter element7:50 
+Sample Output: 
+Non-duplicate items: 
+[10, 20, 30, 40, 50] 
+
+CODE: 
+public class RemoveDuplicates {
+    public static void main(String[] args) {
+        int[] arr = {10, 20, 20, 30, 40, 40, 50};
+        int n = arr.length;
+        int[] temp = new int[n];
+        int j = 0;
+
+        for (int i = 0; i < n; i++) {
+            int k;
+            for (k = 0; k < j; k++) {
+                if (arr[i] == temp[k]) {
+                    break;
+                }
+            }
+            if (k == j) {   // means no duplicate found
+                temp[j] = arr[i];
+                j++;
+            }
+        }
+
+        System.out.print("Non-duplicate items: [");
+        for (int i = 0; i < j; i++) {
+            System.out.print(temp[i]);
+            if (i < j - 1) {
+                System.out.print(", ");
+            }
+        }
+        System.out.println("]");
+    }
+}
