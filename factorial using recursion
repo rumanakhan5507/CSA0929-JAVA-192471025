@@ -1,0 +1,21 @@
+15. Write a program to calculate the factorial of number using recursive 
+function. 
+Sample Input & Output: 
+Enter the value of n: 6 
+Sample Input & Output: 
+The factorial of 6 is: 720 
+
+CODE: 
+public class Factorial {
+    static int fact(int n) {
+        if(n == 0 || n == 1)
+            return 1;
+        return n * fact(n - 1);
+    }
+
+    public static void main(String[] args) {
+        int n = 6;
+        int result = fact(n);
+        System.out.println("The factorial of " + n + " is: " + result);
+    }
+}
