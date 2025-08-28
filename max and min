@@ -1,0 +1,42 @@
+2. Find the Mth maximum number and Nth minimum number in an array and then find 
+the sum of it and difference of it. 
+Sample Input: 
+Array of elements = {14, 16, 87, 36, 25, 89, 34} 
+M = 1 
+N = 3 
+Sample Output: 
+1stMaximum Number = 89 
+3rdMinimum Number = 25 
+Sum = 114 
+Difference = 64
+
+CODE: 
+public class MthMaxNthMin {
+    public static void main(String[] args) {
+        int arr[] = {14, 16, 87, 36, 25, 89, 34};
+        int n = arr.length;
+        int M = 1;   // Mth maximum
+        int N = 3;   // Nth minimum
+
+        // Sort array (bubble sort)
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+
+        int mthMax = arr[n - M];  // Mth maximum
+        int nthMin = arr[N - 1];  // Nth minimum
+
+        int sum = mthMax + nthMin;
+        int diff = mthMax - nthMin;
+
+        System.out.println(M + "stMaximum Number = " + mthMax);
+        System.out.println(N + "rdMinimum Number = " + nthMin);
+        System.out.println("Sum = " + sum + "  Difference = " + diff);
+    }
+}
