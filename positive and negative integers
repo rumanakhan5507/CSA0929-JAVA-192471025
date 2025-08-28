@@ -1,0 +1,49 @@
+13. Write a program to read the numbers until -1 is encountered. Find the 
+average of positive numbers and negative numbers entered by user. 
+Sample Input: 
+Enter -1 to exit… 
+Enter the number: 7 
+Enter the number: -2 
+Enter the number: 9 
+Enter the number: -8 
+Enter the number: -6 
+Enter the number: -4 
+Enter the number: 10 
+Enter the number:  -1 
+Sample Output: 
+The average of negative numbers is: -5.0 
+The average of positive numbers is : 8.66666667
+
+CODE: 
+public class AverageNumbers {
+    public static void main(String[] args) {
+        int posSum = 0, negSum = 0;
+        int posCount = 0, negCount = 0;
+
+        for (int i = 0; i < args.length; i++) {
+            int num = Integer.parseInt(args[i]);
+
+            if (num == -1) {
+                break; // stop when -1 is entered
+            }
+
+            if (num > 0) {
+                posSum += num;
+                posCount++;
+            } else if (num < 0) {
+                negSum += num;
+                negCount++;
+            }
+        }
+
+        if (negCount > 0)
+            System.out.println("The average of negative numbers is: " + ((double) negSum / negCount));
+        else
+            System.out.println("No negative numbers entered.");
+
+        if (posCount > 0)
+            System.out.println("The average of positive numbers is: " + ((double) posSum / posCount));
+        else
+            System.out.println("No positive numbers entered.");
+    }
+}
