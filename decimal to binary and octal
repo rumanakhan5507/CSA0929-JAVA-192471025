@@ -1,0 +1,33 @@
+5. Write a program to convert Decimal number equivalent to Binary number and octal 
+numbers? 
+Sample Input: 
+Decimal Number: 15 
+Sample Output: 
+Binary Number = 1111 
+Octal = 17
+
+CODE: 
+public class DecimalConversion {
+    public static void main(String[] args) {
+        int decimal = 15;   // change value for testing
+
+        // Convert to binary
+        int num = decimal;
+        String binary = "";
+        while (num > 0) {
+            binary = (num % 2) + binary;
+            num = num / 2;
+        }
+
+        // Convert to octal
+        num = decimal;
+        String octal = "";
+        while (num > 0) {
+            octal = (num % 8) + octal;
+            num = num / 8;
+        }
+
+        System.out.println("Binary Number = " + binary);
+        System.out.println("Octal = " + octal);
+    }
+}
