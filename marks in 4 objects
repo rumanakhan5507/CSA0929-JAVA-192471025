@@ -1,0 +1,49 @@
+9. Write a program to enter the marks of a student in four subjects. 
+Then calculate the total and aggregate, display the grade obtained 
+by the student. If the student scores an aggregate greater than 
+75%, then the grade is Distinction. If aggregate is 60>= and <75, 
+then the grade is First Division. If aggregate is 50 >= and <60, 
+then the grade is Second Division. If aggregate is 40>= and <50, 
+then the grade is Third Division. Else the grade is Fail. 
+Sample Input & Output: 
+Enter the marks in python: 90 
+Enter the marks in c programming: 91 
+Enter the marks in Mathematics: 92 
+Enter the marks in Physics: 93 
+Total= 366 
+Aggregate = 91.5 
+DISTINCTION 
+int a1=90; 
+int a2=91; 
+int a3=92; 
+int a4=93; 
+int  
+total=(a1+a2+a3+a4) ;
+
+CODE: 
+public class StudentGrade {
+    public static void main(String[] args) {
+        int a1 = 90;
+        int a2 = 91;
+        int a3 = 92;
+        int a4 = 93;
+
+        int total = a1 + a2 + a3 + a4;
+        double aggregate = total / 4.0;
+
+        System.out.println("Total = " + total);
+        System.out.println("Aggregate = " + aggregate);
+
+        if (aggregate > 75) {
+            System.out.println("DISTINCTION");
+        } else if (aggregate >= 60) {
+            System.out.println("FIRST DIVISION");
+        } else if (aggregate >= 50) {
+            System.out.println("SECOND DIVISION");
+        } else if (aggregate >= 40) {
+            System.out.println("THIRD DIVISION");
+        } else {
+            System.out.println("FAIL");
+        }
+    }
+}
