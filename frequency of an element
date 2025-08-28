@@ -1,0 +1,45 @@
+29. Program to find the frequency of each element in the array. 
+Sample Input & Output: 
+{1, 2, 8, 3, 2, 2, 2, 5, 1} 
+Element | Frequency -------------------------- 
+1           
+|         
+2           
+8           
+3           
+5           
+|         
+|         
+|         
+2 
+4 
+1 
+1 
+|        
+1
+
+CODE: 
+public class Frequency {
+    public static void main(String[] args) {
+        int arr[] = {1, 2, 8, 3, 2, 2, 2, 5, 1};
+        int n = arr.length;
+        int visited[] = new int[n];
+
+        System.out.println("Element | Frequency");
+        System.out.println("-------------------");
+
+        for (int i = 0; i < n; i++) {
+            if (visited[i] == 1) continue;  // skip already counted elements
+
+            int count = 1;
+            for (int j = i + 1; j < n; j++) {
+                if (arr[i] == arr[j]) {
+                    count++;
+                    visited[j] = 1;  // mark as counted
+                }
+            }
+
+            System.out.println(arr[i] + "       | " + count);
+        }
+    }
+}
