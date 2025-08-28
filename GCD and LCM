@@ -1,26 +1,38 @@
+5. Find the LCM and GCD of n numbers? 
+Sample Input: 
+N value = 2 
+Number 1 = 16 
+Number 2 = 20 
+Sample Output: 
+LCM = 80 
+GCD = 4 
+
+CODE: 
 import java.io.*;
-public class GCDANDLCM
-{
-    public static void main(String[] args)
-    {
-        int a = 36, b= 60;
-        int gcd= findGCD (a,b);
-        int lcm= (a*b)/gcd;
-        System.out.println("GCD is:"+gcd);
-        System.out.println("LCM is:"+lcm);
+
+public class GCDANDLCM {
+    public static void main(String[] args) {
+        int[] numbers = {16, 20};   
+
+        int gcd = numbers[0];
+        int lcm = numbers[0];
+
+        for (int i = 1; i < numbers.length; i++) {
+            gcd = findGCD(gcd, numbers[i]);          
+            lcm = (lcm * numbers[i]) / gcd;          
+        }
+
+        System.out.println("GCD is:" + gcd);
+        System.out.println("LCM is:" + lcm);
     }
-    public static int findGCD(int a, int b)
-    {
-        while (a!=b)
-        {
-            if (a>b)
-            a= a-b;
+
+    public static int findGCD(int a, int b) {
+        while (a != b) {
+            if (a > b)
+                a = a - b;
             else
-            b= b-a;
+                b = b - a;
         }
         return a;
     }
 }
-OUTPUT: 
-GCD is:12
-LCM is:180
