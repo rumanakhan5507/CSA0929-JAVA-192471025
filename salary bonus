@@ -1,0 +1,38 @@
+6. In an organization they decide to give bonus to all the employees on New Year. A 5% 
+bonus on salary is given to the grade A workers and 10% bonus on salary to the grade 
+B workers. Write a program to enter the salary and grade of the employee. If the salary 
+of the employee is less than $10,000 then the employee gets an extra 2% bonus on 
+salary Calculate the bonus that has to be given to the employee and print the salary that 
+the employee will get. 
+Sample Input & Output: 
+Enter the grade of the employee: B 
+Enter the employee salary: 50000 
+Salary=50000 
+Bonus=5000.0 
+Total to be paid:55000.0 
+
+CODE: 
+public class EmployeeBonus {
+    public static void main(String[] args) {
+        char grade = 'B';     // employee grade (A or B)
+        double salary = 50000; // employee salary
+
+        double bonus = 0;
+
+        if (grade == 'A') {
+            bonus = 0.05 * salary;
+        } else if (grade == 'B') {
+            bonus = 0.10 * salary;
+        }
+
+        if (salary < 10000) {
+            bonus += 0.02 * salary; // extra 2% bonus
+        }
+
+        double total = salary + bonus;
+
+        System.out.println("Salary = " + salary);
+        System.out.println("Bonus = " + bonus);
+        System.out.println("Total to be paid: " + total);
+    }
+}
