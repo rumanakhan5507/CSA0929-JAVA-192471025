@@ -1,0 +1,38 @@
+22. Display Multiplication table for 5 and 10 using various stages of life cycle of the 
+thread by generating a suitable code in Java. 
+Sample Input 5, 10 
+5 X 1 = 5 
+5 X 2 =10 
+ …. 
+10 X 1 =10 
+10 X 2 = 20 
+…. 
+
+CODE: 
+class A extends Thread {
+    public void run() {
+        int n = 5;
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(n + " X " + i + " = " + (n * i));
+        }
+    }
+}
+
+class B extends Thread {
+    public void run() {
+        int n = 10;
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(n + " X " + i + " = " + (n * i));
+        }
+    }
+}
+
+public class MultiplicationTable {
+    public static void main(String[] args) {
+        A t1 = new A();
+        B t2 = new B();
+
+        t1.start();
+        t2.start();
+    }
+}
