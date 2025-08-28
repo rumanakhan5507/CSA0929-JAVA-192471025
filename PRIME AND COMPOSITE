@@ -1,0 +1,43 @@
+1. Write a program to count all the prime and composite numbers entered by the user. 
+Sample Input: 
+Enter the numbers  
+4 
+54 
+29 
+71 
+7 
+59 
+98 
+23 
+Sample Output: 
+Composite number:3 
+Prime number:5
+
+CODE: 
+public class PrimeCompositeCount {
+    public static void main(String[] args) {
+        int arr[] = {4, 54, 29, 71, 7, 59, 98, 23}; // sample input
+        int primeCount = 0, compositeCount = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+            int n = arr[i];
+            if (n < 2) continue; // ignore numbers less than 2
+
+            int factors = 0;
+            for (int j = 1; j <= n; j++) {
+                if (n % j == 0) {
+                    factors++;
+                }
+            }
+
+            if (factors == 2) {
+                primeCount++;
+            } else {
+                compositeCount++;
+            }
+        }
+
+        System.out.println("Composite number: " + compositeCount);
+        System.out.println("Prime number: " + primeCount);
+    }
+}
