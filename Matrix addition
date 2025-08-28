@@ -1,0 +1,36 @@
+11. Write a program for matrix addition? 
+Sample Input: 
+Mat1 = 1  2 
+5  3 
+Mat2 = 2   3 
+4   1 
+Sample Output: 
+Mat Sum = 3    5 
+9    
+4 
+CODE: 
+public class MatrixAddition {
+    public static void main(String[] args) {
+        int[][] mat1 = { {1, 2}, {5, 3} };   // first matrix
+        int[][] mat2 = { {2, 3}, {4, 1} };   // second matrix
+
+        int rows = 2, cols = 2;   // size of matrices
+        int[][] sum = new int[rows][cols];
+
+        // adding both matrices
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                sum[i][j] = mat1[i][j] + mat2[i][j];
+            }
+        }
+
+        // printing result
+        System.out.println("Mat Sum = ");
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                System.out.print(sum[i][j] + "  ");
+            }
+            System.out.println();
+        }
+    }
+}
