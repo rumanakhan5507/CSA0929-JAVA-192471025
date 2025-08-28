@@ -1,3 +1,10 @@
+37. Program to find whether the given number is Armstrong number or not 
+Sample Input: 
+Enter number : 153 
+Sample Output: 
+Given number is Armstrong number 
+
+CODE: 
 import java.io.*;
 public class Amstrongnumber
 {
