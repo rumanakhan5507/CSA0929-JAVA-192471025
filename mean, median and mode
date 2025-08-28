@@ -1,0 +1,53 @@
+19. Find the Mean, Median, Mode of the array of numbers? 
+Sample Input;: 
+Array of elements = {16, 18, 27, 16, 23, 21, 19} 
+Sample Output: 
+Mean = 20 
+Median = 19 
+Mode = 16 
+
+CODE: 
+public class MeanMedianMode {
+    public static void main(String[] args) {
+        int arr[] = {16, 18, 27, 16, 23, 21, 19};
+        int n = arr.length;
+
+        // Mean
+        int sum = 0;
+        for (int i = 0; i < n; i++) {
+            sum += arr[i];
+        }
+        int mean = sum / n;
+
+        // Sort (simple bubble sort for median calculation)
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+
+        // Median
+        int median;
+        if (n % 2 == 0) {
+            median = (arr[n/2 - 1] + arr[n/2]) / 2;
+        } else {
+            median = arr[n/2];
+        }
+
+        // Mode
+        int mode = arr[0];
+        int maxCount = 0;
+        for (int i = 0; i < n; i++) {
+            int count = 0;
+            for (int j = 0; j < n; j++) {
+                if (arr[j] == arr[i]) {
+                    count++;
+                }
+            }
+            if (count > maxCount) {
+                maxCount = count;
+                mode = arr
