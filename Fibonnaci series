@@ -1,0 +1,38 @@
+27. Write a program to print the Fibonacci series. 
+Sample Input: 
+Enter the n value: 6 
+Sample Output: 
+0 
+1 
+1 
+2 
+3 
+5 
+Test Condition: Implement negative Fibonacci series 
+
+CODE: 
+public class FibonacciSeries {
+    public static void main(String[] args) {
+        int n = 6;   // change value for testing
+
+        // Normal Fibonacci
+        int a = 0, b = 1;
+        System.out.println("Fibonacci Series:");
+        for (int i = 1; i <= n; i++) {
+            System.out.println(a);
+            int c = a + b;
+            a = b;
+            b = c;
+        }
+
+        // Negative Fibonacci
+        a = 0; b = 1;
+        System.out.println("\nNegative Fibonacci Series:");
+        for (int i = 1; i <= n; i++) {
+            System.out.println(a);
+            int c = a - b;  // subtraction instead of addition
+            a = b;
+            b = c;
+        }
+    }
+}
