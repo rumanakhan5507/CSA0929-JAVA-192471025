@@ -1,0 +1,17 @@
+34. Find the nth odd number after n odd number 
+Sample Input: 
+N : 4 
+Sample Output: 
+4th Odd number after 4 odd numbers = 15 
+
+CODE: 
+public class NthOddNumber {
+    public static void main(String[] args) {
+        int n = 4;   // change value for testing
+
+        // Formula: nth odd number after n odds = (2n - 1) + 2n
+        int result = (2 * n - 1) + (2 * n);
+
+        System.out.println(n + "th Odd number after " + n + " odd numbers = " + result);
+    }
+}
