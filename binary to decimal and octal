@@ -1,0 +1,33 @@
+17. Write a program to convert the Binary to Decimal, Octal 
+Sample Input: 
+Given Number: 1101 
+Sample Output: 
+Decimal Number: 13 
+Octal:15
+
+CODE: 
+public class BinaryConversion {
+    public static void main(String[] args) {
+        int binary = 1101;   // given number
+       
+        // Convert binary to decimal
+        int decimal = 0, base = 1, temp = binary;
+        while (temp > 0) {
+            int lastDigit = temp % 10;
+            decimal += lastDigit * base;
+            base *= 2;
+            temp /= 10;
+        }
+
+        // Convert decimal to octal
+        int decimalCopy = decimal;
+        String octal = "";
+        while (decimalCopy > 0) {
+            octal = (decimalCopy % 8) + octal;
+            decimalCopy /= 8;
+        }
+
+        System.out.println("Decimal Number: " + decimal);
+        System.out.println("Octal: " + octal);
+    }
+}
