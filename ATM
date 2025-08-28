@@ -1,0 +1,30 @@
+3. Write a program to print the total amount available in the ATM machine with the 
+conditions applied. 
+Total denominations are 2000, 500, 200, 100, get the denomination priority from the user 
+and the total number of notes from the user to display the total available balance to the user 
+Sample Input: 
+Enter the 1st Denomination: 500 
+Enter the 1st Denomination number of notes: 4 
+Enter the 2nd Denomination: 100 
+Enter the 2nd  Denomination number of notes: 20 
+Enter the 3rd  Denomination: 200 
+Enter the 3rd  Denomination number of notes: 32 
+Enter the 4th Denomination: 2000 
+Enter the 4th Denomination number of notes: 1 
+Sample Output: 
+Total Available Balance in ATM: 12400
+
+CODE: 
+public class ATMBalance {
+    public static void main(String[] args) {
+        // Sample Input
+        int d1 = 500, n1 = 4;    // denomination 1 and its notes
+        int d2 = 100, n2 = 20;   // denomination 2 and its notes
+        int d3 = 200, n3 = 32;   // denomination 3 and its notes
+        int d4 = 2000, n4 = 1;   // denomination 4 and its notes
+
+        int total = (d1 * n1) + (d2 * n2) + (d3 * n3) + (d4 * n4);
+
+        System.out.println("Total Available Balance in ATM: " + total);
+    }
+}
