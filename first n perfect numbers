@@ -1,0 +1,32 @@
+7. Write a program to print the first n perfect numbers. (Hint Perfect number means a 
+positive integer that is equal to the sum of its proper divisors) 
+Sample Input: 
+N = 3 
+Sample Output: 
+First 3 perfect numbers are: 6 , 28 , 496
+
+CODE: 
+public class PerfectNumbers {
+    public static void main(String[] args) {
+        int n = 3; // how many perfect numbers to print
+        int count = 0, num = 1;
+
+        System.out.print("First " + n + " perfect numbers are: ");
+        while (count < n) {
+            int sum = 0;
+            for (int i = 1; i <= num / 2; i++) {
+                if (num % i == 0) {
+                    sum += i;
+                }
+            }
+            if (sum == num) {
+                System.out.print(num);
+                count++;
+                if (count < n) {
+                    System.out.print(" , ");
+                }
+            }
+            num++;
+        }
+    }
+}
