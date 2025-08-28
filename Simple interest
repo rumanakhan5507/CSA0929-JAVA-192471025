@@ -1,0 +1,27 @@
+8. Write a program using function to calculate the simple interest. Suppose the 
+customer is a senior citizen. He is being offered 12 percent rate of interest; 
+for all other customers, the ROI is 10 percent. 
+Sample Input: 
+Enter the principal amount: 200000 
+Enter the no of years:  3 
+Is customer senior citizen (y/n): n 
+Sample Output: 
+Interest: 60000
+
+CODE: 
+public class SimpleInterest {
+    public static void main(String[] args) {
+        int principal = 200000;   
+        int years = 3;           
+        char senior = 'n';        
+
+        double rate = 10;         
+        if (senior == 'y') {
+            rate = 12;            
+        }
+
+        double interest = (principal * years * rate) / 100;
+
+        System.out.println("Interest: " + interest);
+    }
+}
