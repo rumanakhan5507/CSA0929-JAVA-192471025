@@ -1,0 +1,58 @@
+8. Develop a JAVA code to display the balance. Include the following members:        
+ Design a class to represent a bank account. 
+ Data  Members: Name of the depositor, Account number, Type of 
+account(Savings/Current), Balance amount in the account(Minimum balance is 
+Rs.500.00)                
+ Methods:  
+1. To read account number, Depositor name, Type of account. 
+2. To deposit an amount (Deposited amount should be added with it)  
+3. To withdraw an amount after checking balance(Minimum balance must be 
+Rs.500.00 
+Note : Assume that balance amount = 10000
+
+CODE: 
+public class BankAccountSimple {
+    public static void main(String[] args) {
+        // Account details
+        String name = "Romi";
+        String accountNumber = "ACC12345";
+        String accountType = "Savings";
+        double balance = 10000; // assumed initial balance
+
+        System.out.println("Account Details:");
+        System.out.println("Depositor Name: " + name);
+        System.out.println("Account Number: " + accountNumber);
+        System.out.println("Account Type: " + accountType);
+        System.out.println("Balance: " + balance);
+        System.out.println();
+
+        // Deposit an amount
+        double depositAmount = 2000;
+        balance = balance + depositAmount;
+        System.out.println("Amount deposited: " + depositAmount);
+        System.out.println("Updated balance: " + balance);
+        System.out.println();
+
+        // Withdraw an amount
+        double withdrawAmount = 9500;
+        if (balance - withdrawAmount >= 500) {
+            balance = balance - withdrawAmount;
+            System.out.println("Amount withdrawn: " + withdrawAmount);
+            System.out.println("Updated balance: " + balance);
+        } else {
+            System.out.println("Cannot withdraw " + withdrawAmount + ". Minimum balance Rs.500 must be maintained.");
+        }
+    }
+}
+OUTPUT:
+Account Details:
+Depositor Name: Romi
+Account Number: ACC12345
+Account Type: Savings
+Balance: 10000.0
+
+Amount deposited: 2000.0
+Updated balance: 12000.0
+
+Amount withdrawn: 9500.0
+Updated balance: 2500.0
