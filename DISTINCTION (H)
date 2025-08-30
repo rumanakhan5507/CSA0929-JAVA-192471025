@@ -1,0 +1,18 @@
+19. Develop a programme that uses Multiple Inheritance concepts to compute a student's 
+grades in six subjects. The total and aggregate are then calculated, and the student's 
+grade is displayed. If the student achieves an aggregate of more than 75%, the grade is 
+Distinction. If the aggregate is between 60 and 75, the grade is First Division. If the 
+aggregate is between 50 and 60, the grade is Second Division. If the aggregate is between 
+40 and 50, the grade is Third Division. Otherwise, the grade is FAIL. 
+Sample Input & Output: 
+Enter the marks in python: 90 
+Enter the marks in c programming: 91 
+Enter the marks in Mathematics: 92 
+Enter the marks in Physics: 93 
+Enter the marks in Chemistry: 92 
+Enter the marks in Professional Ethics: 93 
+Total= 551 
+Aggregate = 91.83 
+Class: DISTINCTION 
+
+refer the marks file here 
