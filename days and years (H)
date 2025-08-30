@@ -64,3 +64,12 @@ public class CombinedProgram {
         System.out.println(dayInput + "/" + monthInput + "/" + yearInput + " is " + daysOfWeek[dayOfWeek]);
     }
 }
+OUTPUT: 
+Days Conversion:
+No. of years: 2
+No. of weeks: 3
+No. of days: 5
+
+Day of the Week:
+31/8/2019 is Saturday
+
