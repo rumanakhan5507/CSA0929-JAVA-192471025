@@ -1,0 +1,45 @@
+14. Write a program to read a character until a * is encountered. Also count the number of 
+uppercase, lowercase, and numbers entered by the users. 
+Sample Input: 
+Enter * to exit… 
+Enter any character: W 
+Enter any character: d 
+Enter any character: A 
+Enter any character: G 
+Enter any character: g 
+Enter any character: H 
+Enter any character: * 
+Sample Output: 
+Total count of lower case:2 
+Total count of upper case:4 
+Total count of numbers =0 
+
+CODE: 
+public class CountCharacters {
+    public static void main(String[] args) {
+        // Hardcoded input sequence (like user typed them)
+        char[] inputs = {'W', 'd', 'A', 'G', 'g', 'H', '*'};
+
+        int lower = 0, upper = 0, digits = 0;
+
+        for (int i = 0; i < inputs.length; i++) {
+            char ch = inputs[i];
+
+            if (ch == '*') {
+                break; // stop input
+            }
+
+            if (ch >= 'a' && ch <= 'z') {
+                lower++;
+            } else if (ch >= 'A' && ch <= 'Z') {
+                upper++;
+            } else if (ch >= '0' && ch <= '9') {
+                digits++;
+            }
+        }
+
+        System.out.println("Total count of lower case: " + lower);
+        System.out.println("Total count of upper case: " + upper);
+        System.out.println("Total count of numbers: " + digits);
+    }
+}
