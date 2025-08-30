@@ -1,0 +1,44 @@
+5. Write a Program to create a list of all numbers in a range which are perfect 
+squares and the sum of the digits of the number is less than 10. 
+Sample Input & Output: 
+Enter lower range: 1 
+Enter upper range: 40 
+[1, 4, 9, 16, 25, 36]
+
+CODE: 
+public class PerfectSquares {
+    public static void main(String[] args) {
+        // Input range (change these to test)
+        int lower = 1;
+        int upper = 40;
+
+        System.out.print("[");
+        boolean first = true; // to handle commas
+
+        for (int i = lower; i <= upper; i++) {
+            int sqrt = (int) Math.sqrt(i);
+            if (sqrt * sqrt == i) { // check perfect square
+                if (sumOfDigits(i) < 10) {
+                    if (!first) {
+                        System.out.print(", ");
+                    }
+                    System.out.print(i);
+                    first = false;
+                }
+            }
+        }
+        System.out.println("]");
+    }
+
+    // Helper method to calculate sum of digits
+    public static int sumOfDigits(int num) {
+        int sum = 0;
+        while (num > 0) {
+            sum += num % 10;
+            num /= 10;
+        }
+        return sum;
+    }
+}
+OUTPUT: 
+[1, 4, 9, 16, 25, 36]
