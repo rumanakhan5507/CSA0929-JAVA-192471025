@@ -1,0 +1,66 @@
+1. Write a Java Program to Convert a Given Number of Days in Terms of Years, Weeks 
+& Days. 
+Sample Input&Output:: 
+Enter the number of days:756 
+No. of years:2 
+No. of weeks:3 
+No. of days:5 
+Given a date, return the corresponding day of the week for that date. 
+The input is given as three integers representing the day, month and year respectively. 
+Return the answer as one of the following values {"Sunday", "Monday", "Tuesday", 
+"Wednesday", "Thursday", "Friday", "Saturday"}. 
+Example 1: 
+Input: day = 31, month = 8, year = 2019 
+Output: "Saturday" 
+Example 2: 
+Input: day = 18, month = 7, year = 1999 
+Output: "Sunday" 
+Example 3: 
+Input: day = 15, month = 8, year = 1993 
+Output: "Sunday" 
+Constraints: 
+ The given dates are valid dates between the years 1971 and 2100.
+
+CODE: 
+public class CombinedProgram {
+    public static void main(String[] args) {
+        // ----- PART 1: Convert Days to Years, Weeks, and Days -----
+        int totalDays = 756; // Change this value to test
+        int years = totalDays / 365;
+        int remainingDays = totalDays % 365;
+        int weeks = remainingDays / 7;
+        int days = remainingDays % 7;
+
+        System.out.println("Days Conversion:");
+        System.out.println("No. of years: " + years);
+        System.out.println("No. of weeks: " + weeks);
+        System.out.println("No. of days: " + days);
+        System.out.println();
+
+        // ----- PART 2: Find Day of the Week for a Given Date -----
+        int dayInput = 31;   // Change these values to test
+        int monthInput = 8;
+        int yearInput = 2019;
+
+        // Adjust month and year for Zeller's Congruence
+        int day = dayInput;
+        int month = monthInput;
+        int year = yearInput;
+
+        if (month < 3) {
+            month += 12;
+            year -= 1;
+        }
+
+        int k = year % 100; // year of the century
+        int j = year / 100; // zero-based century
+
+        int f = day + (13 * (month + 1)) / 5 + k + (k / 4) + (j / 4) + (5 * j);
+        int dayOfWeek = f % 7;
+
+        String[] daysOfWeek = {"Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"};
+
+        System.out.println("Day of the Week:");
+        System.out.println(dayInput + "/" + monthInput + "/" + yearInput + " is " + daysOfWeek[dayOfWeek]);
+    }
+}
