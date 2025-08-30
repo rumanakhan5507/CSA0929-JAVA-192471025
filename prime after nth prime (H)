@@ -1,0 +1,59 @@
+4. Write a program to print n prime numbers after nth Prime number 
+Sample Input: 
+N = 3 
+Sample Output: 
+3rd  Prime number is 5 
+3 prime numbers after 5 are: 7, 11, 13
+
+CODE: 
+public class PrimeNumbersAfterN {
+    public static void main(String[] args) {
+        int N = 3; // Change this value to test
+
+        // Step 1: Find the nth prime number
+        int count = 0;
+        int number = 2;
+        int nthPrime = 0;
+
+        while (count < N) {
+            if (isPrime(number) == 1) { // 1 means prime
+                count++;
+                if (count == N) {
+                    nthPrime = number;
+                }
+            }
+            number++;
+        }
+
+        System.out.println(N + "th Prime number is " + nthPrime);
+
+        // Step 2: Find N prime numbers after nth prime
+        System.out.print(N + " prime numbers after " + nthPrime + " are: ");
+        int found = 0;
+        int nextNumber = nthPrime + 1;
+
+        while (found < N) {
+            if (isPrime(nextNumber) == 1) {
+                System.out.print(nextNumber);
+                found++;
+                if (found < N) {
+                    System.out.print(", ");
+                }
+            }
+            nextNumber++;
+        }
+        System.out.println();
+    }
+
+    // Helper method: returns 1 if prime, 0 if not prime
+    public static int isPrime(int num) {
+        if (num < 2) return 0;
+        for (int i = 2; i * i <= num; i++) {
+            if (num % i == 0) return 0; // not prime
+        }
+        return 1; // prime
+    }
+}
+OUTPUT: 
+3th Prime number is 5
+3 prime numbers after 5 are: 7, 11, 13
