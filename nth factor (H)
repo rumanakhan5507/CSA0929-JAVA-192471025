@@ -1,0 +1,42 @@
+3. Write a program to print number of factors and to print nth factor of the 
+given number. 
+Sample Input: 
+Given Number: 100 
+N = 4 
+Sample Output: 
+Number of factors = 9 
+4th factor of 100 = 5 
+
+CODE: 
+public class FactorsProgram {
+    public static void main(String[] args) {
+        // Input values (change these to test)
+        int number = 100;
+        int n = 4;
+
+        int count = 0;
+        int nthFactor = -1; // default if n is larger than total factors
+
+        System.out.print("Factors of " + number + ": ");
+        for (int i = 1; i <= number; i++) {
+            if (number % i == 0) {
+                count++; // counting the factor
+                System.out.print(i + " "); // optional: display all factors
+                if (count == n) {
+                    nthFactor = i; // save the nth factor
+                }
+            }
+        }
+
+        System.out.println("\nNumber of factors = " + count);
+        if (nthFactor != -1) {
+            System.out.println(n + "th factor of " + number + " = " + nthFactor);
+        } else {
+            System.out.println(n + "th factor does not exist.");
+        }
+    }
+}
+OUTPUT:
+Factors of 100: 1 2 4 5 10 20 25 50 100 
+Number of factors = 9
+4th factor of 100 = 5
