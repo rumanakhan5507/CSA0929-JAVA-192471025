@@ -1,0 +1,51 @@
+6. Write a program to print unique permutations of a given number 
+Sample Input: 
+Given Number: 143 
+Sample Output: 
+Permutations are: 
+134 
+143 
+314 
+341 
+413 
+431
+
+CODE: 
+public class UniquePermutations {
+    public static void main(String[] args) {
+        int number = 143; // change this to test
+        String numStr = Integer.toString(number);
+        char[] arr = numStr.toCharArray();
+
+        System.out.println("Permutations are:");
+        permute(arr, 0);
+    }
+
+    public static void permute(char[] arr, int start) {
+        if (start == arr.length - 1) {
+            System.out.println(new String(arr));
+        } else {
+            for (int i = start; i < arr.length; i++) {
+                // swap
+                char temp = arr[start];
+                arr[start] = arr[i];
+                arr[i] = temp;
+
+                permute(arr, start + 1);
+
+                // swap back (backtrack)
+                temp = arr[start];
+                arr[start] = arr[i];
+                arr[i] = temp;
+            }
+        }
+    }
+}
+OUTPUT: 
+Permutations are:
+143
+134
+413
+431
+341
+314
