@@ -1,0 +1,41 @@
+20. Write a program to calculate tax given the following conditions: 
+a. If income is less than or equal to 2,50,000 then no tax 
+b. If taxable income is 2,50,001 – 5,00,000 the charge 10% tax 
+c. If taxable income is 5,00,001 – 10,00,000 the charge 20% tax 
+d. If taxable income is above 10,00,001 then charge 30% tax 
+Sample Input: 
+Enter the income: 600000 
+Sample Output: 
+Taxable Income: 350000 
+Tax= 35000 
+
+CODE: 
+public class TaxCalculator {
+    public static void main(String[] args) {
+        int income = 600000; // change this to test
+        int taxableIncome = 0;
+        int tax = 0;
+
+        // Calculate taxable income
+        if (income <= 250000) {
+            taxableIncome = 0;
+        } else {
+            taxableIncome = income - 250000;
+        }
+
+        // Calculate tax based on slabs
+        if (taxableIncome <= 0) {
+            tax = 0;
+        } else if (taxableIncome <= 250000) { // 250001 – 500000
+            tax = taxableIncome * 10 / 100;
+        } else if (taxableIncome <= 750000) { // 500001 – 1000000
+            tax = taxableIncome * 20 / 100;
+        } else { // above 1000000
+            tax = taxableIncome * 30 / 100;
+        }
+
+        // Print results
+        System.out.println("Taxable Income: " + taxableIncome);
+        System.out.println("Tax= " + tax);
+    }
+}
