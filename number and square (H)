@@ -1,0 +1,26 @@
+7. Write a Program to create an array with the First Element as the Number and Second Element as the Square of the Number.
+Sample Input:
+Enter the lower range:45
+Enter the upper range:49
+Sample Output: [(45, 2025), (46, 2116), (47, 2209), (48, 2304), (49, 2401)]
+
+CODE:
+public class NumberAndSquare {
+    public static void main(String[] args) {
+        int lower = 45; // change this to test
+        int upper = 49; // change this to test
+
+        System.out.print("[");
+        for (int i = lower; i <= upper; i++) {
+            int square = i * i;
+            System.out.print("(" + i + ", " + square + ")");
+            if (i < upper) {
+                System.out.print(", ");
+            }
+        }
+        System.out.println("]");
+    }
+}
+OUTPUT: 
+[(45, 2025), (46, 2116), (47, 2209), (48, 2304), (49, 2401)]
+
